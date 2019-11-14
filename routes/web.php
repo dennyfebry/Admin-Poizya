@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('user', function () {
+    return "apakah bisa?";
+});
+
+Route::get('test', 'User@index');
