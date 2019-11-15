@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<a href="/public/product/add">+ Add</a>
+<br>
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Status</th>
+        <th>Opsi</th>
+    </tr>
+    @php
+    $no = 1
+    @endphp
+    @foreach($product as $row)
+    <tr>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{$title}}</title>
-</head>
-
-<body>
-    <h1>Products Page</h1>
-    <br> <br>
-    <ul>
-        <li><a href="/public/dashboard">Dashboard</a></li>
-        <li><a href="/public/product">Products</a></li>
-        <li><a href="/public/order">Orders</a></li>
-        <li><a href="/public/account">Accounts</a></li>
-    </ul>
-    <br> <br>
-    <a href="/public">Logout</a>
-</body>
-
-</html>
+        <td>{{ $no }}</td>
+        <td>{{ $row->code }}</td>
+        <td>{{ $row->name }}</td>
+        <td>Rp{{ number_format($row->price,2,',','.') }}</td>
+        <td>{{ $row->description }}</td>
+        <td>{{ $row->stock }}</td>
+        <td>@if ($row->status === 1)
+            Show
+            @else
+            Draft
+            @endif</td>
+        <td>
+            <a href="/public/product/edit/{{ $row->id }}">Edit</a>
+            |
+            <a href="/public/product/delete/{{ $row->id }}">Delete</a>
+        </td>
+    </tr>
+    @php
+    $no++
+    @endphp
+    @endforeach
+</table>
