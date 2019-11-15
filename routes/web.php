@@ -11,12 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('user', function () {
-    return "apakah bisa?";
-});
+Route::get('/', 'UserController@index');
 
-Route::get('test', 'User@index');
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/product', 'DashboardController@product');
+
+Route::get('/order', 'DashboardController@order');
+
+Route::get('/account', 'DashboardController@account');

@@ -4,11 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Poizya</title>
+    <title>{{$title}}</title>
 </head>
 
 <body>
     <h1>Login Page</h1>
+    <br>
+    <a href="/public/dashboard"> ke dashboard</a>
 </body>
 
 </html>
