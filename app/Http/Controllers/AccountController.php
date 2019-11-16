@@ -28,13 +28,16 @@ class AccountController extends Controller
     public function save(Request $request)
     {
         DB::table('account')->insert([
-            // 'code' => $request->code,
-            // 'name' => $request->name,
-            // 'price' => $request->price,
-            // 'description' => $request->description,
-            // 'stock' => $request->stock,
-            // 'status' => $request->status,
-            // 'id_category' => $request->category
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => base64_encode($request->password),
+            'name' => $request->name,
+            'address' => $request->address,
+            'no_hp' => $request->no_hp,
+            'portal_code' => $request->portal_code,
+            'status' => $request->status,
+            'level' => $request->level,
+            'created' => $request->created
         ]);
 
         return redirect('/account');
@@ -52,13 +55,16 @@ class AccountController extends Controller
     public function update(Request $request)
     {
         DB::table('account')->where('id', $request->id)->update([
-            // 'code' => $request->code,
-            // 'name' => $request->name,
-            // 'price' => $request->price,
-            // 'description' => $request->description,
-            // 'stock' => $request->stock,
-            // 'status' => $request->status,
-            // 'id_category' => $request->category
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => base64_encode($request->password),
+            'name' => $request->name,
+            'address' => $request->address,
+            'no_hp' => $request->no_hp,
+            'portal_code' => $request->portal_code,
+            'status' => $request->status,
+            'level' => $request->level,
+            'modified' => $request->modified
         ]);
 
         return redirect('/account');

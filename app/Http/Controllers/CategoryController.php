@@ -28,13 +28,8 @@ class CategoryController extends Controller
     public function save(Request $request)
     {
         DB::table('category')->insert([
-            // 'code' => $request->code,
-            // 'name' => $request->name,
-            // 'price' => $request->price,
-            // 'description' => $request->description,
-            // 'stock' => $request->stock,
-            // 'status' => $request->status,
-            // 'id_category' => $request->category
+            'name' => $request->name,
+            'description' => $request->description
         ]);
 
         return redirect('/category');
@@ -52,13 +47,8 @@ class CategoryController extends Controller
     public function update(Request $request)
     {
         DB::table('category')->where('id', $request->id)->update([
-            // 'code' => $request->code,
-            // 'name' => $request->name,
-            // 'price' => $request->price,
-            // 'description' => $request->description,
-            // 'stock' => $request->stock,
-            // 'status' => $request->status,
-            // 'id_category' => $request->category
+            'name' => $request->name,
+            'description' => $request->description
         ]);
 
         return redirect('/category');

@@ -7,7 +7,7 @@
     Code <input type="text" name="code" value="{{ $row->code }}" required="required"> <br />
     Name <input type="text" name="name" value="{{ $row->name }}" required="required"> <br />
     Price <input type="number" name="price" value="{{ $row->price }}" required="required"> <br />
-    Description <input type="text" name="description" value="{{ $row->description }}" required="required"> <br />
+    Description <textarea name="description" required="required">{{ htmlspecialchars($row->description) }} </textarea> <br />
     Stock <input type="number" name="stock" value="{{ $row->stock }}" required="required"> <br />
     Status
     <select name="status">
@@ -16,8 +16,9 @@
     </select>
     Category
     <select name="category">
-        <option value="1" {{ ( $row->id_category == "1" ) ? 'selected' : '' }}>1</option>
-        <option value="2" {{ ( $row->id_category == "2" ) ? 'selected' : '' }}>2</option>
+        @foreach($category as $cat)
+        <option value="{{$cat->id}}" {{ ( $row->id_category == "$cat->id" ) ? 'selected' : '' }}>{{$cat->name}}</option>
+        @endforeach
     </select>
     <input type="submit" value="Save Data">
 </form>

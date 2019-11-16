@@ -3,6 +3,7 @@
 <table border="1">
     <tr>
         <th>No</th>
+        <th>Category</th>
         <th>Code</th>
         <th>Name</th>
         <th>Price</th>
@@ -18,6 +19,12 @@
     <tr>
 
         <td>{{ $no }}</td>
+        @foreach($category as $cat)
+        @if ($cat->id === $row->id_category)
+        <td>{{ $cat->name }}</td>
+        @else
+        @endif
+        @endforeach
         <td>{{ $row->code }}</td>
         <td>{{ $row->name }}</td>
         <td>Rp{{ number_format($row->price,2,',','.') }}</td>

@@ -5,7 +5,7 @@
     Code <input type="text" name="code" required="required"> <br />
     Name <input type="text" name="name" required="required"> <br />
     Price <input type="number" name="price" required="required"> <br />
-    Description <input type="text" name="description" required="required"> <br />
+    Description <textarea name="description" required="required"> </textarea> <br />
     Stock <input type="number" name="stock" required="required"> <br />
     Status
     <select name="status">
@@ -14,8 +14,9 @@
     </select>
     Category
     <select name="category">
-        <option value="1">1</option>
-        <option value="2">2</option>
+        @foreach($category as $cat)
+        <option value="{{$cat->id}}">{{$cat->name}}</option>
+        @endforeach
     </select>
     <input type="submit" value="Save Data">
 </form>

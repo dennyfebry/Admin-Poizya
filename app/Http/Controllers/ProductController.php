@@ -14,7 +14,8 @@ class ProductController extends Controller
         $name = "Products";
         $content = "product";
         $product = DB::table('product')->get();
-        return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'product' => $product]);
+        $category = DB::table('category')->get();
+        return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'product' => $product, 'category' => $category]);
     }
 
     public function add()
@@ -22,7 +23,8 @@ class ProductController extends Controller
         $title = "Products - Admin Poizya";
         $name = "Products";
         $content = "form/add/product";
-        return view('template', ['title' => $title, 'name' => $name, 'content' => $content]);
+        $category = DB::table('category')->get();
+        return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'category' => $category]);
     }
 
     public function save(Request $request)
@@ -46,7 +48,8 @@ class ProductController extends Controller
         $name = "Products";
         $content = "form/edit/product";
         $product = DB::table('product')->where('id', $id)->get();
-        return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'product' => $product]);
+        $category = DB::table('category')->get();
+        return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'product' => $product, 'category' => $category]);
     }
 
     public function update(Request $request)

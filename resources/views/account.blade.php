@@ -27,7 +27,12 @@
         <td>{{ $row->address }}</td>
         <td>{{ $row->no_hp }}</td>
         <td>{{ $row->portal_code }}</td>
-        <td>{{ $row->status }}</td>
+        <td>@if ($row->status === 1)
+            Active
+            @else
+            Not Active
+            @endif</td>
+        <td>{{ $row->last_login }}</td>
         <td>{{ $row->created }}</td>
         <td>{{ $row->modified }}</td>
         <td>

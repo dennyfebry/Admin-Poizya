@@ -24,9 +24,24 @@
         <td>{{ $row->total }}</td>
         <td>{{ $row->order_date }}</td>
         <td>{{ $row->payment_deadline }}</td>
-        <td>{{ $row->payment_method }}</td>
-        <td>{{ $row->customer }}</td>
-        <td>{{ $row->status }}</td>
+        <td>@if ($row->payment_method === "1")
+            BCA
+            @elseif ($row->payment_method === "2")
+            BRI
+            @else
+            the other
+            @endif</td>
+        @foreach($account as $acc)
+        <td>@if ($acc->id === $row->id_account)
+            {{ $acc->name }}
+            @else
+            @endif</td>
+        @endforeach
+        <td>
+            @if ($row->status === 1)
+            Succes
+            @else
+            @endif</td>
         <td>{{ $row->created }}</td>
         <td>{{ $row->modified }}</td>
         <td>
