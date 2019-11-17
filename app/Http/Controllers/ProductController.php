@@ -13,10 +13,24 @@ class ProductController extends Controller
         $title = "Products - Admin Poizya";
         $name = "Products";
         $content = "product";
-        $product = DB::table('product')->get();
+        $product = DB::table('product')->paginate(10);
         $category = DB::table('category')->get();
         return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'product' => $product, 'category' => $category]);
     }
+
+    public function search(Request $request)
+	{
+        $title = "Products - Admin Poizya";
+        $name = "Products";
+        $content = "product";
+		$search = $request->search;
+		$product = DB::table('product')
+		->where('name','like',"%".$search."%")
+        ->paginate();
+        $category = DB::table('category')->get();
+		return view('template',['title' => $title, 'name' => $name, 'content' => $content, 'product' => $product, 'category' => $category]);
+ 
+	}
 
     public function add()
     {

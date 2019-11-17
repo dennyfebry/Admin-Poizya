@@ -1,4 +1,4 @@
-<a href="/public/order/add">+ Add (Sementara)</a>
+<!-- <a href="/public/order/add">+ Add (Sementara)</a> -->
 <br>
 <table border="1">
     <tr>
@@ -37,17 +37,21 @@
             @else
             @endif</td>
         @endforeach
-        <td>
-            @if ($row->status === 1)
+        @foreach($confirmation as $cfm)
+        <td>@if ($cfm->status === 1)
             Succes
             @else
+            Pending
             @endif</td>
+        @endforeach
         <td>{{ $row->created }}</td>
         <td>{{ $row->modified }}</td>
         <td>
-            <a href="/public/order/edit/{{ $row->id }}">Edit</a>
+            <!-- <a href="/public/order/edit/{{ $row->id }}">Edit(Sementara)</a>
             |
-            <a href="/public/order/delete/{{ $row->id }}">Delete</a>
+            <a href="/public/order/delete/{{ $row->id }}">Delete(Sementara)</a>
+            | -->
+            <a href="/public/order/details/{{ $row->id }}">Details</a>
         </td>
     </tr>
     @php

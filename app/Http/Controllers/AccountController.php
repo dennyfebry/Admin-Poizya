@@ -17,6 +17,19 @@ class AccountController extends Controller
         return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'account' => $account]);
     }
 
+    public function search(Request $request)
+	{
+        $title = "Accounts - Admin Poizya";
+        $name = "Accounts";
+        $content = "account";
+		$search = $request->search;
+		$account = DB::table('account')
+		->where('name','like',"%".$search."%")
+        ->paginate();
+		return view('template',['title' => $title, 'name' => $name, 'content' => $content, 'account' => $account, 'category' => $category]);
+ 
+	}
+
     public function add()
     {
         $title = "Accounts - Admin Poizya";

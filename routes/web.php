@@ -27,6 +27,7 @@ Route::post('/category/update', 'CategoryController@update');
 Route::get('/category/delete/{id}', 'CategoryController@delete');
 
 Route::get('/product', 'ProductController@index');
+Route::get('/product/search', 'ProductController@search');
 Route::get('/product/add', 'ProductController@add');
 Route::post('/product/save', 'ProductController@save');
 Route::get('/product/edit/{id}', 'ProductController@edit');
@@ -34,6 +35,7 @@ Route::post('/product/update', 'ProductController@update');
 Route::get('/product/delete/{id}', 'ProductController@delete');
 
 Route::get('/order', 'OrderController@index');
+Route::get('/order/details/{id}', 'OrderController@detail');
 Route::get('/order/add', 'OrderController@add');
 Route::post('/order/save', 'OrderController@save');
 Route::get('/order/edit/{id}', 'OrderController@edit');
@@ -41,6 +43,7 @@ Route::post('/order/update', 'OrderController@update');
 Route::get('/order/delete/{id}', 'OrderController@delete');
 
 Route::get('/account', 'AccountController@index');
+Route::get('/account/search', 'AccountController@search');
 Route::get('/account/add', 'AccountController@add');
 Route::post('/account/save', 'AccountController@save');
 Route::get('/account/edit/{id}', 'AccountController@edit');

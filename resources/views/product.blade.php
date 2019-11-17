@@ -1,4 +1,9 @@
-<a href="/public/product/add">+ Add</a>
+<p>Search Product :</p>
+	<form action="/public/product/search" method="GET">
+		<input type="text" name="search" placeholder="Search Product .." value="{{ old('search') }}">
+		<input type="submit" value="Search">
+    </form>
+    <a href="/public/product/add">+ Add</a>
 <br>
 <table border="1">
     <tr>
@@ -27,7 +32,7 @@
         @endforeach
         <td>{{ $row->code }}</td>
         <td>{{ $row->name }}</td>
-        <td>Rp{{ number_format($row->price,2,',','.') }}</td>
+        <td>Rp.{{ number_format($row->price,2,',','.') }}</td>
         <td>{{ $row->description }}</td>
         <td>{{ $row->stock }}</td>
         <td>@if ($row->status === 1)
@@ -43,6 +48,12 @@
     </tr>
     @php
     $no++
-    @endphp
+            @endphp
     @endforeach
 </table>
+
+<br/>
+Halaman : {{ $product->currentPage() }} <br/>
+Jumlah Data : {{ $product->total() }} <br/>
+Data Per Halaman : {{ $product->perPage() }} <br/>
+{{ $product->links() }}

@@ -1,4 +1,9 @@
-<a href="/public/account/add">+ Add</a>
+<p>Search Product :</p>
+	<form action="/public/account/search" method="GET">
+		<input type="text" name="search" placeholder="Search Account .." value="{{ old('search') }}">
+		<input type="submit" value="Search">
+    </form>
+    <a href="/public/account/add">+ Add</a>
 <br>
 <table border="1">
     <tr>
