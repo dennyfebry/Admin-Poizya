@@ -4,31 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
 
     public function index()
     {
-        $title = "Orders - Admin Poizya";
-        $name = "Orders";
-        $content = "order";
-        $order = DB::table('order')->get();
-        $account = DB::table('account')->get();
-        $bank = DB::table('bank')->get();
-        $confirmation = DB::table('confirmation')->get();
-        return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'order' => $order, 'account' => $account, 'bank' => $bank, 'confirmation' => $confirmation]);
+        if (!Session::get('login')) {
+            return redirect('/')->with('alert', 'You must login first');
+        } else {
+            $title = "Orders - Admin Poizya";
+            $name = "Orders";
+            $content = "order";
+            $order = DB::table('order')->get();
+            $account = DB::table('account')->get();
+            $bank = DB::table('bank')->get();
+            $confirmation = DB::table('confirmation')->get();
+            return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'order' => $order, 'account' => $account, 'bank' => $bank, 'confirmation' => $confirmation]);
+        }
     }
 
     public function detail($id)
     {
-        $title = "Orders - Admin Poizya";
-        $name = "Orders";
-        $content = "order_details";
-        $order = DB::table('order')->where('id', $id)->get();
-        $order_details = DB::table('order_details')->where('id_order', $id)->get();
-        $account = DB::table('account')->get();
-        return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'order' => $order, 'order_details' => $order_details, 'account' => $account]);
+        if (!Session::get('login')) {
+            return redirect('/')->with('alert', 'You must login first');
+        } else {
+            $title = "Orders - Admin Poizya";
+            $name = "Orders";
+            $content = "order_details";
+            $order = DB::table('order')->where('id', $id)->get();
+            $order_details = DB::table('order_details')->where('id_order', $id)->get();
+            $account = DB::table('account')->get();
+            return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'order' => $order, 'order_details' => $order_details, 'account' => $account]);
+        }
     }
 
     // public function add()

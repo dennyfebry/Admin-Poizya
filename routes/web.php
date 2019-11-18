@@ -16,6 +16,9 @@
 // });
 
 Route::get('/', 'UserController@index');
+// Route::get('/login', 'User@login');
+Route::post('/loginPost', 'UserController@loginPost');
+Route::get('/logout', 'UserController@logout');
 
 Route::get('/dashboard', 'DashboardController@index');
 

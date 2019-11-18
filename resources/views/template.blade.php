@@ -20,7 +20,7 @@
     <br> <br>
     @include($content)
     <br> <br>
-    <a href="/public">Logout</a>
+    <a href="/public/logout">Logout</a>
 </body>
 
 </html>
