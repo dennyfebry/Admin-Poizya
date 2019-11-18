@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\ModelUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -27,9 +29,14 @@ class UserController extends Controller
             'password' => 'required'
         ], $messages);
 
+        
         $email = $request->id;
         $username = $request->id;
         $password = base64_encode($request->password);
+        DB::table('admin')->where('password', $password)->update([
+            'last_login' => $request->last_login,
+            'token' => Str::random(60)
+        ]);
         $data = ModelUser::where('email', $email)->orwhere('username', $username)->first();
         if ($data) {
             if ($password == $data->password) {

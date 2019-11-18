@@ -52,6 +52,7 @@
                     <input class="input100" type="password" name="password" placeholder="password">
                     <span class="focus-input100"></span>
                 </div>
+                <input type="hidden" name="last_login" value="{{ date('Y-m-d H:i:s')}}">
 
                 <div class="container-login100-form-btn">
                     <button type="submit" class="login100-form-btn">

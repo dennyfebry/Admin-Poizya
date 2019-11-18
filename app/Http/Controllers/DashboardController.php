@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -17,7 +17,11 @@ class DashboardController extends Controller
             $title = "Dashboard - Admin Poizya";
             $name = "Dashboard";
             $content = "dashboard";
-            return view('template', ['title' => $title, 'name' => $name, 'content' => $content]);
+            $product = DB::table('product')->count();
+            // $favorite = DB::table('favorite')->count();
+            $order_detail = DB::table('order_details')->count();
+            $account = DB::table('account')->count();
+            return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'product' => $product, 'order_detail' => $order_detail, 'account' => $account]);
         }
     }
 }
