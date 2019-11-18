@@ -9,7 +9,7 @@
     </button> <br />
     Name <input type="text" name="name" required="required"> <br />
     Address <textarea name="address" required="required"> </textarea><br />
-    No HP <input type="number" name="no_hp" required="required"> <br />
+    Phone Number <input type="number" name="phone_number" required="required"> <br />
     Portal Code <input type="text" name="portal_code" required="required"> <br />
     <input type="hidden" name="status" value="0"> <br />
     <input type="hidden" name="level" value="0"> <br />

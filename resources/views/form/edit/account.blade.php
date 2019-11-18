@@ -11,7 +11,7 @@
     </button> <br />
     Name <input type="text" name="name" value="{{ $row->name }}" required="required"> <br />
     Address <textarea name="address" required="required">{{ htmlspecialchars($row->address) }} </textarea><br />
-    No HP <input type="number" name="no_hp" value="{{ $row->no_hp }}" required="required"> <br />
+    Phone Number<input type="number" name="phone_number" value="{{ $row->no_hp }}" required="required"> <br />
     Portal Code <input type="text" name="portal_code" value="{{ $row->portal_code }}" required="required"> <br />
     <select name="status">
         <option value="1" {{ ( $row->status == "1" ) ? 'selected' : '' }}>Active</option>

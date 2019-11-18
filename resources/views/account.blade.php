@@ -45,7 +45,7 @@
                                         <th>Email</th>
                                         <th>Name</th>
                                         <th>Address</th>
-                                        <th>No HP</th>
+                                        <th>Phone Number</th>
                                         <th>Portal Code</th>
                                         <th>Status</th>
                                         <th>Last Login</th>
@@ -65,7 +65,7 @@
                                         <td>{{ $row->email }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->address }}</td>
-                                        <td>{{ $row->no_hp }}</td>
+                                        <td>{{ $row->phone_number }}</td>
                                         <td>{{ $row->portal_code }}</td>
                                         <td>@if ($row->status === 1)
                                             Active
