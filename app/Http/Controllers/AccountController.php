@@ -17,7 +17,7 @@ class AccountController extends Controller
             $title = "Accounts - Admin Poizya";
             $name = "Accounts";
             $content = "account";
-            $account = DB::table('account')->get();
+            $account = DB::table('account')->paginate(10);
             return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'account' => $account]);
         }
     }

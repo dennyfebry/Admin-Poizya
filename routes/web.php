@@ -23,6 +23,7 @@ Route::get('/logout', 'UserController@logout');
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/category', 'CategoryController@index');
+Route::get('/category/search', 'CategoryController@search');
 Route::get('/category/add', 'CategoryController@add');
 Route::post('/category/save', 'CategoryController@save');
 Route::get('/category/edit/{id}', 'CategoryController@edit');

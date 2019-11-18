@@ -17,7 +17,23 @@ class CategoryController extends Controller
             $title = "Category - Admin Poizya";
             $name = "Category";
             $content = "category";
-            $category = DB::table('category')->get();
+            $category = DB::table('category')->paginate(10);
+            return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'category' => $category]);
+        }
+    }
+
+    public function search(Request $request)
+    {
+        if (!Session::get('login')) {
+            return redirect('/')->with('alert', 'You must login first');
+        } else {
+            $title = "Category - Admin Poizya";
+            $name = "Category";
+            $content = "category";
+            $search = $request->search;
+            $category = DB::table('category')
+                ->where('name', 'like', "%" . $search . "%")
+                ->paginate();
             return view('template', ['title' => $title, 'name' => $name, 'content' => $content, 'category' => $category]);
         }
     }

@@ -16,6 +16,17 @@ class UserController extends Controller
 
     public function loginPost(Request $request)
     {
+        $messages = [
+            'required' => ':attribute must be filled!!!',
+            'min' => ':attribute must be filled in at a minimum :min character!!!',
+            'max' => ':attribute must be filled in at a maximum :max character!!!',
+        ];
+
+        $this->validate($request, [
+            'id' => 'required',
+            'password' => 'required'
+        ], $messages);
+
         $email = $request->id;
         $username = $request->id;
         $password = base64_encode($request->password);

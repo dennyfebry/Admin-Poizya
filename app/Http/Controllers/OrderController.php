@@ -17,7 +17,7 @@ class OrderController extends Controller
             $title = "Orders - Admin Poizya";
             $name = "Orders";
             $content = "order";
-            $order = DB::table('order')->get();
+            $order = DB::table('order')->paginate(10);
             $account = DB::table('account')->get();
             $bank = DB::table('bank')->get();
             $confirmation = DB::table('confirmation')->get();
