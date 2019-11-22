@@ -56,6 +56,7 @@ class AccountController extends Controller
             return redirect('/')->with('alert', 'You must login first');
         } else {
             DB::table('account')->insert([
+                'id' => uniqid(),
                 'username' => $request->username,
                 'email' => $request->email,
                 'password' => base64_encode($request->password),
