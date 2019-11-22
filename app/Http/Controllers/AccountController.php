@@ -116,4 +116,13 @@ class AccountController extends Controller
             return redirect('/account');
         }
     }
+
+    public function verification(Request $request)
+    {
+        $title = "Verification Accounts";
+        DB::table('account')->where('id', $request->id)->update([
+            'status' => "1"
+        ]);
+        return view('verification', ['title' => $title]);
+    }
 }

@@ -53,3 +53,4 @@ Route::post('/account/save', 'AccountController@save');
 Route::get('/account/edit/{id}', 'AccountController@edit');
 Route::post('/account/update', 'AccountController@update');
 Route::get('/account/delete/{id}', 'AccountController@delete');
+Route::get('/account/verification/{id}', 'AccountController@verification');
