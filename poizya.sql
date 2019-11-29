@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 28, 2019 at 04:36 AM
+-- Generation Time: Nov 29, 2019 at 01:58 PM
 -- Server version: 10.1.43-MariaDB
 -- PHP Version: 7.3.6
 
@@ -53,8 +53,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `username`, `email`, `password`, `token`, `name`, `bio`, `gender`, `birthday`, `address`, `phone_number`, `portal_code`, `level`, `status`, `last_login`, `created`, `modified`) VALUES
-('5dd781e106a86', 'papawfawwaz', 'papawfawwaz1@gmail.com', 'cXdlcnR5MTIzNDU=', NULL, 'Papaw Fawwaz', 'Rich boy', 'Male', '1997-11-13', 'Bandung', '081234567890', '35213', 0, 1, '2019-11-25 08:01:20', '2019-11-16 05:20:48', '2019-11-16 05:35:22'),
-('5dd78376480da', 'inwardco', 'inwardco@gmail.com', 'aW53YXJkY28yNA==', NULL, 'Inward Company', 'Have More Quality', 'Unsex', '2013-03-24', 'Komplek SMKN 2 Jl. Ir. Sutami No 11 RT 7 / RW 11 ( Belakang SMKN2 )', '085691388200', '15118', 0, 1, '2019-11-28 03:56:55', '2019-11-22 01:43:02', '2019-11-23 10:40:18');
+('5dd781e106a86', 'papawfawwaz', 'papawfawwaz1@gmail.com', 'cXdlcnR5MTIzNDU=', NULL, 'M Fawwaz I', 'Ganteng', 'Male', '1997-11-13', 'utytgerfd', '081234567890', '35213', 0, 1, '2019-11-28 10:49:28', '2019-11-16 05:20:48', '2019-11-28 11:06:57'),
+('5dd78376480da', 'inwardco', 'inwardco@gmail.com', 'aW53YXJkY28yNA==', NULL, 'Inward Company', 'Have More Quality', 'Unsex', '2013-03-24', 'Komplek SMKN 2 Jl. Ir. Sutami No 11 RT 7 / RW 11 ( Belakang SMKN2 )', '085691388200', '15118', 0, 1, '2019-11-28 10:26:13', '2019-11-22 01:43:02', '2019-11-23 10:40:18');
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,9 @@ CREATE TABLE `favorite` (
 
 INSERT INTO `favorite` (`id`, `id_product`, `id_account`) VALUES
 (1, 1, '5dd78376480da'),
-(2, 6, '5dd78376480da');
+(2, 6, '5dd78376480da'),
+(3, 4, '5dd781e106a86'),
+(4, 7, '5dd781e106a86');
 
 -- --------------------------------------------------------
 
@@ -302,7 +304,8 @@ ALTER TABLE `bank`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `cart` (`id_account`);
+  ADD KEY `product_cart` (`id_product`),
+  ADD KEY `account_cart` (`id_account`);
 
 --
 -- Indexes for table `category`
@@ -321,7 +324,8 @@ ALTER TABLE `confirmation`
 --
 ALTER TABLE `favorite`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `account` (`id_account`);
+  ADD KEY `favorite_account` (`id_account`),
+  ADD KEY `favorite_product` (`id_product`);
 
 --
 -- Indexes for table `order`
@@ -381,7 +385,7 @@ ALTER TABLE `confirmation`
 -- AUTO_INCREMENT for table `favorite`
 --
 ALTER TABLE `favorite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -409,13 +413,15 @@ ALTER TABLE `product`
 -- Constraints for table `cart`
 --
 ALTER TABLE `cart`
-  ADD CONSTRAINT `cart` FOREIGN KEY (`id_account`) REFERENCES `account` (`id`);
+  ADD CONSTRAINT `account_cart` FOREIGN KEY (`id_account`) REFERENCES `account` (`id`),
+  ADD CONSTRAINT `product_cart` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
 
 --
 -- Constraints for table `favorite`
 --
 ALTER TABLE `favorite`
-  ADD CONSTRAINT `account` FOREIGN KEY (`id_account`) REFERENCES `account` (`id`);
+  ADD CONSTRAINT `favorite_account` FOREIGN KEY (`id_account`) REFERENCES `account` (`id`),
+  ADD CONSTRAINT `favorite_product` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
