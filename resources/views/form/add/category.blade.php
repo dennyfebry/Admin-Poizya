@@ -27,11 +27,11 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="Name">Name</label>
-                                    <input type="text" class="form-control" name="name" required="required"> <br />
+                                    <input type="text" class="form-control" name="name" required="required">
                                 </div>
                                 <div class="form-group">
                                     <label for="Description">Description</label>
-                                    <textarea name="description" class="form-control" required="required"> </textarea> <br />
+                                    <textarea name="description" class="form-control" required="required"> </textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary mb-2">Save Data</button>
                             </form>

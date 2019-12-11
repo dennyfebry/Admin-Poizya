@@ -25,12 +25,12 @@
                             <!-- <a href="/order/add" type="button" class="btn btn-primary btn-sm">Add Order</a> -->
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
-                                    <!-- <form action="/order/search" method="GET">
+                                    <form action="/order/search" method="GET">
                                         <div class="input-group-append">
                                             <input type="text" name="search" class="form-control float-right" placeholder="Search" value="{{ old('search') }}">
                                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                                         </div>
-                                    </form> -->
+                                    </form>
 
                                 </div>
                             </div>
@@ -72,10 +72,10 @@
                                             the other
                                             @endif</td>
                                         @foreach($account as $acc)
-                                        <td>@if ($acc->id === $row->id_account)
-                                            {{ $acc->name }}
-                                            @else
-                                            @endif</td>
+                                        @if ($acc->id == $row->id_account)
+                                        <td>{{$customer = $acc->name}}</td>
+                                        @else
+                                        @endif
                                         @endforeach
                                         @foreach($confirmation as $cfm)
                                         <td>@if ($cfm->status === 1)
