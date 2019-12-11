@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/public/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                         <li class="breadcrumb-item active">Order</li>
                     </ol>
                 </div>
@@ -22,10 +22,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <!-- <a href="/public/order/add" type="button" class="btn btn-primary btn-sm">Add Order</a> -->
+                            <!-- <a href="/order/add" type="button" class="btn btn-primary btn-sm">Add Order</a> -->
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
-                                    <!-- <form action="/public/order/search" method="GET">
+                                    <!-- <form action="/order/search" method="GET">
                                         <div class="input-group-append">
                                             <input type="text" name="search" class="form-control float-right" placeholder="Search" value="{{ old('search') }}">
                                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -87,11 +87,11 @@
                                         <td>{{ $row->created }}</td>
                                         <td>{{ $row->modified }}</td>
                                         <td>
-                                            <!-- <a href="/public/order/edit/{{ $row->id }}">Edit(Sementara)</a>
+                                            <!-- <a href="/order/edit/{{ $row->id }}">Edit(Sementara)</a>
             |
-            <a href="/public/order/delete/{{ $row->id }}">Delete(Sementara)</a>
+            <a href="/order/delete/{{ $row->id }}">Delete(Sementara)</a>
             | -->
-                                            <a href="/public/order/details/{{ $row->id }}">Details</a>
+                                            <a href="/order/details/{{ $row->id }}">Details</a>
                                         </td>
                                     </tr>
                                     @php

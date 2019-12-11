@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://adminpoizya.dennyfebrygo.com'),
+    'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY','lldrypwv6w0iu0ctq3qymmjbcg39jolt'),
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 

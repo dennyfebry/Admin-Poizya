@@ -1,6 +1,6 @@
-<a href="/public/account">Back</a>
+<a href="/account">Back</a>
 <br>
-<form action="/public/account/save" method="post">
+<form action="/account/save" method="post">
     {{ csrf_field() }}
     Username <input type="text" name="username" required="required"> <br />
     Email <input type="text" name="email" required="required"> <br />

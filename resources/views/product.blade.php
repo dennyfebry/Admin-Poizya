@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/public/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                         <li class="breadcrumb-item active">Product</li>
                     </ol>
                 </div>
@@ -22,10 +22,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="/public/product/add" type="button" class="btn btn-primary btn-sm">Add Product</a>
+                            <a href="/product/add" type="button" class="btn btn-primary btn-sm">Add Product</a>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
-                                    <form action="/public/product/search" method="GET">
+                                    <form action="/product/search" method="GET">
                                         <div class="input-group-append">
                                             <input type="text" name="search" class="form-control float-right" placeholder="Search" value="{{ old('search') }}">
                                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -75,9 +75,9 @@
                                             Draft
                                             @endif</td>
                                         <td>
-                                            <a href="/public/product/edit/{{ $row->id }}">Edit</a>
+                                            <a href="/product/edit/{{ $row->id }}">Edit</a>
                                             |
-                                            <a href="/public/product/delete/{{ $row->id }}">Delete</a>
+                                            <a href="/product/delete/{{ $row->id }}">Delete</a>
                                         </td>
                                     </tr>
                                     @php

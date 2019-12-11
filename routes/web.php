@@ -15,8 +15,11 @@
 //     return view('welcome');
 // });
 
+Route::get('/db', function () {
+    return DB::select('select database();');
+});
+
 Route::get('/', 'UserController@index');
-// Route::get('/login', 'User@login');
 Route::post('/loginPost', 'UserController@loginPost');
 Route::get('/logout', 'UserController@logout');
 

@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/public/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                         <li class="breadcrumb-item active">Category</li>
                     </ol>
                 </div>
@@ -22,10 +22,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="/public/category/add" type="button" class="btn btn-primary btn-sm">Add Category</a>
+                            <a href="/category/add" type="button" class="btn btn-primary btn-sm">Add Category</a>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
-                                    <form action="/public/category/search" method="GET">
+                                    <form action="/category/search" method="GET">
                                         <div class="input-group-append">
                                             <input type="text" name="search" class="form-control float-right" placeholder="Search" value="{{ old('search') }}">
                                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -55,9 +55,9 @@
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->description }}</td>
                                         <td>
-                                            <a href="/public/category/edit/{{ $row->id }}">Edit</a>
+                                            <a href="/category/edit/{{ $row->id }}">Edit</a>
                                             |
-                                            <a href="/public/category/delete/{{ $row->id }}">Delete</a>
+                                            <a href="/category/delete/{{ $row->id }}">Delete</a>
                                         </td>
                                     </tr>
                                     @php

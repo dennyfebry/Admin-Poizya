@@ -25,7 +25,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/public/logout">Logout<i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link" href="/logout">Logout<i class="fas fa-sign-out-alt"></i></a>
                 </li>
             </ul>
         </nav>
@@ -54,9 +54,9 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item has-treeview">
                             @if ($content === 'dashboard')
-                            <a href="/public/dashboard" class="nav-link active">
+                            <a href="/dashboard" class="nav-link active">
                                 @else
-                                <a href="/public/dashboard" class="nav-link">
+                                <a href="/dashboard" class="nav-link">
                                     @endif
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
@@ -66,9 +66,9 @@
                         </li>
                         <li class="nav-item has-treeview">
                             @if ($content === 'category')
-                            <a href="/public/category" class="nav-link active">
+                            <a href="/category" class="nav-link active">
                                 @else
-                                <a href="/public/category" class="nav-link">
+                                <a href="/category" class="nav-link">
                                     @endif
                                     <i class="nav-icon fas fa-table"></i>
                                     <p>
@@ -78,9 +78,9 @@
                         </li>
                         <li class="nav-item has-treeview">
                             @if ($content === 'product')
-                            <a href="/public/product" class="nav-link active">
+                            <a href="/product" class="nav-link active">
                                 @else
-                                <a href="/public/product" class="nav-link">
+                                <a href="/product" class="nav-link">
                                     @endif
                                     <i class="nav-icon fas fa-table"></i>
                                     <p>
@@ -90,9 +90,9 @@
                         </li>
                         <li class="nav-item has-treeview">
                             @if ($content === 'order')
-                            <a href="/public/order" class="nav-link active">
+                            <a href="/order" class="nav-link active">
                                 @else
-                                <a href="/public/order" class="nav-link">
+                                <a href="/order" class="nav-link">
                                     @endif
                                     <i class="nav-icon fas fa-table"></i>
                                     <p>
@@ -102,9 +102,9 @@
                         </li>
                         <li class="nav-item has-treeview">
                             @if ($content === 'account')
-                            <a href="/public/account" class="nav-link active">
+                            <a href="/account" class="nav-link active">
                                 @else
-                                <a href="/public/account" class="nav-link">
+                                <a href="/account" class="nav-link">
                                     @endif
                                     <i class="nav-icon fas fa-table"></i>
                                     <p>
@@ -120,12 +120,12 @@
         </aside>
         @include($content)
         <footer class="main-footer">
-            <strong>Copyright &copy; 2019 <a href="http://poizya.dennyfebrygo.com">Poizya</a>.</strong>
+            <strong>Copyright &copy; 2019 <a href="#>Poizya</a>.</strong>
             All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 1.0.0
-            </div>
-        </footer>
+            <div class=" float-right d-none d-sm-inline-block">
+                    <b>Version</b> 1.0.0
+    </div>
+    </footer>
     </div>
 
     <script type="text/javascript" src="{{ asset('/vendor/jquery/jquery-3.2.1.min.js') }}"></script>

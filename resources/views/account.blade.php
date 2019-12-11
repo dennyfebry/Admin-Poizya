@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/public/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                         <li class="breadcrumb-item active">Account</li>
                     </ol>
                 </div>
@@ -22,10 +22,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="/public/account/add" type="button" class="btn btn-primary btn-sm">Add Account</a>
+                            <a href="/account/add" type="button" class="btn btn-primary btn-sm">Add Account</a>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
-                                    <form action="/public/account/search" method="GET">
+                                    <form action="/account/search" method="GET">
                                         <div class="input-group-append">
                                             <input type="text" name="search" class="form-control float-right" placeholder="Search" value="{{ old('search') }}">
                                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -76,9 +76,9 @@
                                         <td>{{ $row->created }}</td>
                                         <td>{{ $row->modified }}</td>
                                         <td>
-                                            <a href="/public/account/edit/{{ $row->id }}">Edit</a>
+                                            <a href="/account/edit/{{ $row->id }}">Edit</a>
                                             |
-                                            <a href="/public/account/delete/{{ $row->id }}">Delete</a>
+                                            <a href="/account/delete/{{ $row->id }}">Delete</a>
                                         </td>
                                     </tr>
                                     @php
